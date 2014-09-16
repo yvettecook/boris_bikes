@@ -12,9 +12,7 @@ class Garage
 		van.broken_bike.each do |bike|
 			bikes << van.release(bike)
 		end
-	end
-
-	
+	end	
 
 end
 

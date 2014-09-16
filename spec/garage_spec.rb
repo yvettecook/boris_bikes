@@ -5,7 +5,4 @@ describe Garage do
 	let(:van) { Van.new }
 	let(:garage) { Garage.new }
 
-
-
-	
 end

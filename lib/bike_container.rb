@@ -24,6 +24,7 @@ DEFAULT_CAPACITY = 10
 	end
 
 	def release(bike)
+		raise "The container is emtpy" if empty?
 		bikes.delete(bike)
 	end
 
@@ -37,6 +38,10 @@ DEFAULT_CAPACITY = 10
 
 	def full?
 		bike_count == capacity
+	end
+
+	def empty?
+		bike_count == 0
 	end
 
 	def available_bikes

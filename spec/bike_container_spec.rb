@@ -42,4 +42,8 @@ describe BikeContainer do
 		expect(holder.available_bikes).to eq([working_bike])
 	end
 
+	it "should know when it's empty" do
+		expect(lambda {holder.release(bike) }).to raise_error(RuntimeError)
+	end
+
 end
