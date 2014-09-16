@@ -5,6 +5,7 @@ describe Van do
 let(:bike) { Bike.new }
 let(:van) { Van.new(:capacity => 30) }
 let(:station) { DockingStation.new }
+let(:garage) { Garage.new }
 
 def fill_station(station)
 	10.times { station.dock(Bike.new) }
@@ -21,6 +22,13 @@ end
 		van.take_broken_bike(station)
 		expect(van.bike_count).to eq(5)
 		expect(station.bike_count).to eq(3)
+	end
+
+	it "should transfer all bikes to garage" do
+		5.times { van.dock(Bike.new.break!) }
+		garage.take_broken_bike(van)
+		expect(garage.bike_count).to eq(5)
+		expect(van.bike_count).to eq(0)
 	end
 
 end

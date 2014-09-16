@@ -1,6 +1,6 @@
 require_relative 'bike_container'
 
-class Van
+class Garage
 
 	include BikeContainer
 
@@ -8,10 +8,11 @@ class Van
 		self.capacity = options.fetch(:capacity, capacity)
 	end
 
-	def take_broken_bike(station)
-		station.broken_bike.each do |bike| 	
-		  bikes << station.release(bike) 
+	def take_broken_bike(van)
+		van.broken_bike.each do |bike|
+			bikes << van.release(bike)
 		end
 	end
 
 end
+
