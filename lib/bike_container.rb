@@ -19,7 +19,7 @@ DEFAULT_CAPACITY = 10
 	end
 
 	def dock(bike)
-		raise "Station is full" if full?
+		raise "There is no more room for bikes" if full?
 		bikes << bike
 	end
 
@@ -34,4 +34,9 @@ DEFAULT_CAPACITY = 10
 	def available_bikes
 		bikes.reject {|bike| bike.broken?}
 	end
+
+	def broken_bike
+		bikes.select {|bike| bike.broken?}
+	end
+
 end
