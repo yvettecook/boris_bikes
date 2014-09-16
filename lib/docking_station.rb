@@ -8,4 +8,10 @@ class DockingStation
 		self.capacity = options.fetch(:capacity, capacity)
 	end
 
+	def take_available_bikes(van)
+    	van.available_bikes.each do |bike|
+      	bikes << van.release(bike)
+    end
+  end
+
 end

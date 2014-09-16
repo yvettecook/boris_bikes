@@ -31,4 +31,18 @@ end
 		expect(van.bike_count).to eq(0)
 	end
 
+	it "should transfer bikes from garage" do
+		10.times { garage.dock(Bike.new) }
+		van.take_available_bikes(garage)
+		expect(garage.bike_count).to eq(0)
+		expect(van.bike_count).to eq (10)
+	end
+
+	it "should transfer all bikes to docking station" do
+		10.times { van.dock(Bike.new) }
+		station.take_available_bikes(van)
+		expect(station.bike_count).to eq(10)
+		expect(van.bike_count).to eq(0)
+	end
+
 end

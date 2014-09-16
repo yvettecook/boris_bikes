@@ -14,4 +14,10 @@ class Van
 		end
 	end
 
+  def take_available_bikes(garage)
+    garage.available_bikes.each do |bike|
+      bikes << garage.release(bike)
+    end
+  end
+
 end
