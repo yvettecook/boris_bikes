@@ -19,7 +19,7 @@ describe BikeContainer do
 
 	it "should release a bike" do
 		holder.dock(bike)
-		holder.release(bike)
+		holder.release_available_bike
 		expect(holder.bike_count).to eq(0)
 	end
 

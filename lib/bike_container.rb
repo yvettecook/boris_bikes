@@ -27,6 +27,14 @@ DEFAULT_CAPACITY = 10
 		bikes.delete(bike)
 	end
 
+	def release_available_bike
+		bikes.delete(available_bikes.pop)
+	end
+
+	def release_broken_bike
+		bikes.delete(broken_bike.pop)
+	end
+
 	def full?
 		bike_count == capacity
 	end
