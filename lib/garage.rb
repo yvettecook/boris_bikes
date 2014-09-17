@@ -14,8 +14,9 @@ class Garage
 		end
 	end	
 
-	
-
+	def fix_all_bikes
+		bikes.each { |bike| bike.fix! }
+	end
 
 
 end
