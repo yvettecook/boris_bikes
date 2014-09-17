@@ -8,7 +8,7 @@ class Van
 		self.capacity = options.fetch(:capacity, capacity)
 	end
 
-	def take_broken_bike(station)
+	def take_broken_bikes(station)
 		station.broken_bike.each do |bike| 	
 		  bikes << station.release(bike) 
 		end

@@ -19,14 +19,14 @@ end
 		5.times { station.dock(Bike.new.break!) }
 		3.times { station.dock(Bike.new) }
 		expect(station.bike_count).to eq(8)
-		van.take_broken_bike(station)
+		van.take_broken_bikes(station)
 		expect(van.bike_count).to eq(5)
 		expect(station.bike_count).to eq(3)
 	end
 
 	it "should transfer all bikes to garage" do
 		5.times { van.dock(Bike.new.break!) }
-		garage.take_broken_bike(van)
+		garage.take_broken_bikes(van)
 		expect(garage.bike_count).to eq(5)
 		expect(van.bike_count).to eq(0)
 	end
@@ -44,5 +44,6 @@ end
 		expect(station.bike_count).to eq(10)
 		expect(van.bike_count).to eq(0)
 	end
+
 
 end
