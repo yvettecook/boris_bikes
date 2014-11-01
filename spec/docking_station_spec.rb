@@ -13,5 +13,4 @@ let(:bike) { Bike.new }
 		expect(lambda {station.release(bike) }).to raise_error(RuntimeError)
 	end	
 
-
 end
